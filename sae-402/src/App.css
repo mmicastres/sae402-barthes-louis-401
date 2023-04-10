@@ -8,7 +8,7 @@ body{
   background-color: rgb(221, 221, 221);
 }
 
-.App {
+body:first-child {
   background-image: url("../img/sway-projet-etudiant-chaise-blog-espritdesign-23.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,7 +17,7 @@ body{
 }
 
 header {
-  height: 210px;
+  height: 240px;
   width: 100%;
   background-image: url("../img/fond\ header.png");
   background-repeat: no-repeat;
