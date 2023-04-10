@@ -13,10 +13,10 @@ function App() {
           <NavBar></NavBar>
           <Routes>
             <Route path="/profile"></Route>
-            <Route></Route>
-            <Route></Route>
-            <Route></Route>
-            <Route></Route>
+            <Route path="/projects"></Route>
+            <Route path="/Home"></Route>
+            <Route path="/"></Route>
+            <Route path="/Connexion"></Route>
           </Routes>
         </BrowserRouter>
       </div>

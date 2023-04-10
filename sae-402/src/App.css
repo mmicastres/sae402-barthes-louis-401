@@ -16,7 +16,7 @@ body{
   z-index: 0;
 }
 
-.header {
+header {
   height: 210px;
   width: 100%;
   background-image: url("../img/fond\ header.png");
