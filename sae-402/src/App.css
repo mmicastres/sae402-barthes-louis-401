@@ -99,7 +99,17 @@ header {
   border-radius: 5%;
   margin-left: 5%;
   margin-right: 5%;
+  box-shadow: 12px 12px 2px #FFE3E3;
 }
+
+.card h2 {
+  margin-left: 5%;
+}
+
+.card p {
+  margin-left: 5%;
+}
+
 
 .card img {
   object-fit: cover;

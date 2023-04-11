@@ -3,24 +3,24 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 
 export default function Bodycontent(){
-    const url = "https://lyra.alwaysdata.net/api/USER";
+    // const url = "https://lyra.alwaysdata.net/public/api/PROJECT";
 
-    const [rgaer, rgqerg] = useState([]);
+    // const [recettes, setRecettes] = useState([]);
 
-    const fetchOptions = { method: "GET" };
-    useEffect(() => {
-      fetch(url, fetchOptions)
-        .then((response) => {
-          return response.json();
-        })
-        .then((dataJSON) => {
-          console.log(dataJSON);
-          setRecettes(dataJSON);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }, []);
+    // const fetchOptions = { method: "GET" };
+    // useEffect(() => {
+    //   fetch(url, fetchOptions)
+    //     .then((response) => {
+    //       return response.json();
+    //     })
+    //     .then((dataJSON) => {
+    //       console.log(dataJSON);
+    //       setRecettes(dataJSON);
+    //     })
+    //     .catch((error) => {
+    //       console.log(error);
+    //     });
+    // }, []);
 
     return(
       <div class="maincontent">
@@ -34,7 +34,7 @@ export default function Bodycontent(){
               <div class="content">
                   <p> The idea of reaching the North Pole by means of balloons appears to have been entertained many years ago. </p>
               </div>
-              <div class="User">User here</div>
+              <p class="User">User here</p>
           </article>
                   
           <article class="card">
@@ -45,7 +45,7 @@ export default function Bodycontent(){
               <div class="content">
                   <p>Short content.</p>
               </div>
-              <div class="User">User here</div>
+              <p class="User">User here</p>
           </article>
                   
           <article class="card">
@@ -57,7 +57,7 @@ export default function Bodycontent(){
                   <p>In a curious work, published in Paris in 1863 by Delaville Dedreux, there is a
                       suggestion for reaching the North Pole by an aerostat.</p>
               </div>
-              <div class="User">User here</div>
+              <p class="User">User here</p>
           </article>
 
           <article class="card">
@@ -69,7 +69,7 @@ export default function Bodycontent(){
                   <p> The idea of reaching the North Pole by means of balloons appears to have been entertained many
                       years ago. </p>
               </div>
-              <div class="User">User here</div>
+              <p class="User">User here</p>
           </article>
 
           <article class="card">
@@ -81,7 +81,7 @@ export default function Bodycontent(){
                   <p> The idea of reaching the North Pole by means of balloons appears to have been entertained many
                       years ago. </p>
               </div>
-              <div class="User">User here</div>
+              <p class="User">User here</p>
           </article>
 
           <article class="card">
@@ -93,7 +93,7 @@ export default function Bodycontent(){
                   <p> The idea of reaching the North Pole by means of balloons appears to have been entertained many
                       years ago. </p>
               </div>
-              <div class="User">User here</div>
+              <p class="User">User here</p>
           </article>
         </div>
     
