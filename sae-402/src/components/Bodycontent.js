@@ -23,8 +23,9 @@ export default function Bodycontent(){
     // }, []);
 
     return(
+    <div class="allaccueil">        
+    <h2>Dayly projects</h2>
       <div class="maincontent">
-
         <div class="cards">
           <article class="card">
               <div>
@@ -98,5 +99,6 @@ export default function Bodycontent(){
         </div>
     
       </div>
+    </div>
     )
 }
