@@ -3,7 +3,7 @@ import './App.css';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import * as React from "react";
 import NavBar from "./components/NavBar";
-import body_content from "./components/body_content";
+import Bodycontent from "./components/Bodycontent";
 
 
 export default function App() { 
@@ -15,8 +15,8 @@ export default function App() {
           <Routes>
             <Route path="/profile"></Route>
             <Route path="/projects"></Route>
-            <Route path="/accueil" element={<body_content />} />
-            <Route path="/" element={<body_content />}></Route>
+            <Route path="/accueil" element={<Bodycontent />} />
+            <Route path="/" element={<Bodycontent />} />
             <Route path="/Connexion"></Route>
           </Routes>
         </BrowserRouter>
