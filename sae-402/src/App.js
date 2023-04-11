@@ -3,7 +3,7 @@ import './App.css';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import * as React from "react";
 import NavBar from "./components/NavBar";
-import Bodycontent from "./components/Bodycontent";
+import Bodycontent from "./components/bodycontent";
 
 
 export default function App() { 
