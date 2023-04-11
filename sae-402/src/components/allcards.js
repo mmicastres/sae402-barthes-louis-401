@@ -2,7 +2,7 @@ import * as React from "react";
 // import project_type from './img/project_type.jpg';
 import { Link } from "react-router-dom";
 
-export default function Bodycontent() {
+export default function Allcards() {
     // const url = "https://lyra.alwaysdata.net/public/api/PROJECT";
 
     // const [recettes, setRecettes] = useState([]);
@@ -24,7 +24,7 @@ export default function Bodycontent() {
 
     return (
         <div class="allaccueil">
-            <h2>Dayly projects</h2>
+            <h2>All projects</h2>
             <div class="maincontent">
                 <div class="cards">
                     <article class="card">
