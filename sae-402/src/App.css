@@ -8,7 +8,7 @@ body{
   background-color: rgb(221, 221, 221);
 }
 
-body:first-child {
+.app {
   background-image: url("../img/sway-projet-etudiant-chaise-blog-espritdesign-23.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -77,3 +77,135 @@ header {
     border: 1px solid #ccc;
   }
 }
+
+.maincontent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.allaccueil h2 {
+  text-align: center;
+  font-size: 50px;
+}
+
+/* style de mes cards */
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-gap: 20px;
+  margin-top: 5%;
+}
+
+.card {
+  display: grid;
+  grid-template-rows: max-content 200px 1fr;
+  background-color: #FFBBBB;
+  border-radius: 20px;
+  margin-left: 5%;
+  margin-bottom: 10%;
+  margin-right: 5%;
+  box-shadow: 12px 12px 2px #FFE3E3;
+  width: 300px;
+}
+
+.card h2 {
+  text-align: left;
+  margin-left: 5%;
+  font-size: 25px;
+}
+
+.card p {
+  margin-left: 5%;
+}
+
+
+.card img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* form part */
+
+.formhere{
+  width:400px;
+  margin:0 auto;
+  margin-top:10%;
+}
+
+ /* Bordered form */
+
+ form {
+  width:100%;
+  padding: 30px;
+  border-radius: 40px;
+  background: #FFBBBB;
+  box-shadow: 24px 16px 2px #FFE3E3;
+ }
+ #container h1{
+  width: 38%;
+  margin: 0 auto;
+  padding-bottom: 10px;
+ }
+ 
+ /* Full-width inputs */
+
+ input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 15px;
+ }
+
+ input[type=number] {
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 15px;
+ }
+
+ select {
+  width: 60%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 15px;
+ }
+ 
+ /* Set a style for all buttons */
+
+ input[type=submit] {
+  background-color: #53af5800;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 15px;
+ }
+ 
+ input[type=submit]:hover {
+  background-color: white;
+  color: #92ffa8;
+  border: 1px solid #92ffa8;
+  border-radius: 15px;
+ }
+ 
+
+ .submits{
+  display: flex;
+  flex-direction: row;
+ }
