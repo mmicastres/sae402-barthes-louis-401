@@ -6,6 +6,8 @@ import NavBar from "./components/NavBar";
 import Bodycontent from "./components/bodycontent";
 import Allcards from "./components/allcards"
 import Connectform from "./components/formconnexion"
+import CreateForm from "./views/formnewacount"
+import Profile from "./components/profile"
 
 export default function App() {
   return (
@@ -14,11 +16,12 @@ export default function App() {
         <BrowserRouter>
           <NavBar></NavBar>
           <Routes>
-            <Route path="/profile"></Route>
+            <Route path="/profile" element={<Profile />}></Route>
             <Route path="/projects" element={<Allcards />} />
             <Route path="/accueil" element={<Bodycontent />} />
             <Route path="/" element={<Bodycontent />} />
             <Route path="/connexion" element={<Connectform />} />
+            <Route path="/CreateForm" element={<CreateForm />} />
           </Routes>
         </BrowserRouter>
       </div>

@@ -25,18 +25,20 @@ export default function Connectform() {
 
     return (
         <div class="formhere">
-            <form>
-                <label>
-                    Choisissez votre parfum favori :
-                    <select>
-                        <option value="grapefruit">Pamplemousse</option>
-                        <option value="lime">Citron vert</option>
-                        <option selected value="coconut">Noix de coco</option>
-                        <option value="mango">Mangue</option>
-                    </select>
-                </label>
-                <input type="submit" value="Envoyer" />
+            <form action="verification.php" method="POST">
+                <h1>Connexion</h1>
+
+                <label><p>Nom d'utilisateur :</p></label>
+                <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required />
+
+                <label><p>Mot de passe :</p></label>
+                <input type="password" placeholder="Entrer le mot de passe" name="password" required />
+                <div class="submits">
+                    <input type="submit" id='submit' value='LOGIN' />
+                    <Link to="/CreateForm" id='submit'><input type="submit" id='submit' value='REGISTER' /></Link>
+                </div>
             </form>
+
         </div>
     )
 }
