@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -7,11 +7,57 @@ import LoginForm from './components/login__form';
 
 function HomeScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFBBBB' }}>
-      <Text style={{ fontSize: 24, color: '#FFFFFF' }}>Accueil</Text>
-    </View>
+    <ScrollView contentContainerStyle={styles.container}>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFBBBB' }}>
+        <View style={styles.cardContainer}>
+          <Image source={{ uri: 'https://cdn.discordapp.com/attachments/885543075152289894/1095259997241360434/project_type.jpg', }} style={styles.cardImage} />
+          <Text style={styles.cardTitle}>Card 1</Text>
+        </View>
+
+        <View style={styles.cardContainer}>
+          <Image source={{ uri: 'https://cdn.discordapp.com/attachments/885543075152289894/1095259997241360434/project_type.jpg', }} style={styles.cardImage} />
+          <Text style={styles.cardTitle}>Card 2</Text>
+        </View>
+
+        <View style={styles.cardContainer}>
+          <Image source={{ uri: 'https://cdn.discordapp.com/attachments/885543075152289894/1095259997241360434/project_type.jpg', }} style={styles.cardImage} />
+          <Text style={styles.cardTitle}>Card 3</Text>
+        </View>
+      </View>
+    </ScrollView >
   );
 }
+
+const styles = StyleSheet.create({
+  cardContainer: {
+    width: '80%',
+    height: 300,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 10,
+    marginBottom: 20,
+    shadowColor: '#000000',
+    shadowOpacity: 0.2,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowRadius: 4,
+    elevation: 4,
+  },
+  cardTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginVertical: 10,
+    marginHorizontal: 20,
+  },
+  cardImage: {
+    width: '100%',
+    height: '70%',
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+  },
+});
+
 
 function ProfileScreen() {
   return (
