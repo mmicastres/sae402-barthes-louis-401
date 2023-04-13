@@ -1,14 +1,13 @@
 import {useState} from "react";
+import * as React from "react";
 import User from "../classes/User"
-// import project_type from './img/project_type.jpg';
-import { Link } from "react-router-dom";
+
 
 export default function CreateForm(props) {
-
     const date = new Date();
     let date_ajout = date.toJSON().slice(0, 10)
     const level = 0
-    let admin = 0
+    const admin = 0
 
     const [Mail, setMail] = useState("")
     const [Name, setName] = useState("")
@@ -31,8 +30,8 @@ export default function CreateForm(props) {
     const handleSubmit = (event) => {
         event.preventDefault();
         let data = new User(Pseudo, Password, Name, Surname, Mail, Age, date_ajout, Bio, level, admin, Type);
-        console.log("oui")
-        props.handler(data)
+        console.log(data);
+        props.handler(data);
     }
 
     return (
@@ -69,7 +68,7 @@ export default function CreateForm(props) {
                 </select>
 
                 <div className="submits">
-                    <input onClick={handleSubmit} id='submit' value='LOGIN' />
+                    <button onClick={handleSubmit} value='LOGIN' >LOGIN</button>
                 </div>
             </form>
         </div>

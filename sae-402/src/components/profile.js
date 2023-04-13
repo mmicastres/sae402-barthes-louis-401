@@ -1,32 +1,39 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 // import project_type from './img/project_type.jpg';
 import { Link } from "react-router-dom";
 
 export default function Profile() {
-    const url = "https://lyra.alwaysdata.net/public/api/USER";
+  const url = "https://lyra.alwaysdata.net/public/api/USER";
 
-    const [users, setUser] = useState([]);
+  const [users, setUser] = useState([]);
 
-    const fetchOptions = { method: "GET" };
-    useEffect(() => {
-      fetch(url, fetchOptions)
-        .then((response) => {
-          return response.json();
-        })
-        .then((dataJSON) => {
-          console.log(dataJSON);
-          setUser(dataJSON);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }, []);
+  const fetchOptions = { method: "GET" };
+  useEffect(() => {
+    fetch(url, fetchOptions)
+      .then((response) => {
+        return response.json();
+      })
+      .then((dataJSON) => {
+        console.log(dataJSON);
+        setUser(dataJSON);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
-    return (
-        <div class="formhere">
+  return (
+    <article class="card">
+      <div>
         {users.map((user) => (
-        <p className="user">{user.ID_USER}</p>
-      ))}
-        </div>
-    )
+          <h2>Id de l'utilisateur : {user.ID_USER}</h2>
+        ))}
+      </div>
+          
+      <div class="content">
+        <p>ici les details de l'utilisateur</p>
+      </div>
+      <p>Age utilisateur</p>
+    </article>
+  )
 }

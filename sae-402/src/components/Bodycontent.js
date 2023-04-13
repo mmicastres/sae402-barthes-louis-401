@@ -1,103 +1,32 @@
-import * as React from "react";
-// import project_type from './img/project_type.jpg';
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import Card from "../views/cards"
 
 export default function Bodycontent() {
-    // const url = "https://lyra.alwaysdata.net/public/api/PROJECT";
+    const url = "https://lyra.alwaysdata.net/public/api/PROJECT";
 
-    // const [recettes, setRecettes] = useState([]);
+    const [Projects, setProjects] = useState([]);
 
-    // const fetchOptions = { method: "GET" };
-    // useEffect(() => {
-    //   fetch(url, fetchOptions)
-    //     .then((response) => {
-    //       return response.json();
-    //     })
-    //     .then((dataJSON) => {
-    //       console.log(dataJSON);
-    //       setRecettes(dataJSON);
-    //     })
-    //     .catch((error) => {
-    //       console.log(error);
-    //     });
-    // }, []);
+    const fetchOptions = { method: "GET" };
+    useEffect(() => {
+        fetch(url, fetchOptions)
+            .then((response) => {
+                return response.json();
+            })
+            .then((dataJSON) => {
+                console.log(dataJSON);
+                setProjects(dataJSON);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
 
     return (
         <div class="allaccueil">
-            <h2>Dayly projects</h2>
-            <div class="maincontent">
-                <div class="cards">
-                    <article class="card">
-                        <div>
-                            <h2>Project 1</h2>
-                        </div>
-                        <img src='https://cdn.discordapp.com/attachments/885543075152289894/1095259997241360434/project_type.jpg' alt="project" />
-                        <div class="content">
-                            <p> The idea of reaching the North Pole by means of balloons appears to have been entertained many years ago. </p>
-                        </div>
-                        <p class="User">User here</p>
-                    </article>
-
-                    <article class="card">
-                        <div>
-                            <h2>Project 2</h2>
-                        </div>
-                        <img src='https://cdn.discordapp.com/attachments/885543075152289894/1095259997241360434/project_type.jpg' alt="project" />
-                        <div class="content">
-                            <p>Short content.</p>
-                        </div>
-                        <p class="User">User here</p>
-                    </article>
-
-                    <article class="card">
-                        <div>
-                            <h2>Project 3</h2>
-                        </div>
-                        <img src='https://cdn.discordapp.com/attachments/885543075152289894/1095259997241360434/project_type.jpg' alt="project" />
-                        <div class="content">
-                            <p>In a curious work, published in Paris in 1863 by Delaville Dedreux, there is a
-                                suggestion for reaching the North Pole by an aerostat.</p>
-                        </div>
-                        <p class="User">User here</p>
-                    </article>
-
-                    <article class="card">
-                        <div>
-                            <h2>Project 4</h2>
-                        </div>
-                        <img src='https://cdn.discordapp.com/attachments/885543075152289894/1095259997241360434/project_type.jpg' alt="project" />
-                        <div class="content">
-                            <p> The idea of reaching the North Pole by means of balloons appears to have been entertained many
-                                years ago. </p>
-                        </div>
-                        <p class="User">User here</p>
-                    </article>
-
-                    <article class="card">
-                        <div>
-                            <h2>Project 4</h2>
-                        </div>
-                        <img src='https://cdn.discordapp.com/attachments/885543075152289894/1095259997241360434/project_type.jpg' alt="project" />
-                        <div class="content">
-                            <p> The idea of reaching the North Pole by means of balloons appears to have been entertained many
-                                years ago. </p>
-                        </div>
-                        <p class="User">User here</p>
-                    </article>
-
-                    <article class="card">
-                        <div>
-                            <h2>Project 4</h2>
-                        </div>
-                        <img src='https://cdn.discordapp.com/attachments/885543075152289894/1095259997241360434/project_type.jpg' alt="project" />
-                        <div class="content">
-                            <p> The idea of reaching the North Pole by means of balloons appears to have been entertained many
-                                years ago. </p>
-                        </div>
-                        <p class="User">User here</p>
-                    </article>
-                </div>
-
+            <div class="cards">
+                {Projects.map((project) =>
+                    <Card img={project.IMG_PROJ} USER_ID={project.ID_USER_IS_POSTED} USERNAME={project.ID_USER_IS_POSTED} Title={project.NAME_PROJ} description={project.DESCRIPTION_PROJ}></Card>
+                )}
             </div>
         </div>
     )

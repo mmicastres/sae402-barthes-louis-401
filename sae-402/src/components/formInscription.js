@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import * as React from "react";
 import CreateForm from "../views/formnewacount"
 
-export default function Profile() {
+export default function Inscription() {
     let handlerutilisateur = (data) => {
+        console.log(data)
         const url = "https://lyra.alwaysdata.net/public/api/USER";
 
         let myHeaders = new Headers();
@@ -13,23 +14,20 @@ export default function Profile() {
             headers: myHeaders,
             body: JSON.stringify(data.toJSON())
         };
-        useEffect(() => {
-            fetch(url, fetchOptions)
-                .then((response) => {
-                    return response.json();
-                })
-                .then((dataJSON) => {
-                    console.log(dataJSON);
-                    setUser(dataJSON);
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
-        }, []);
-    }
+        fetch(url, fetchOptions)
+            .then((response) => {
+                return response.json();
+            })
+            .then((dataJSON) => {
+                console.log(dataJSON);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
     return (
         <div class="formhere">
-            <CreateForm handler={handlerutilisateur}></CreateForm>
+            <CreateForm handler={handlerutilisateur} />
         </div>
     )
 }

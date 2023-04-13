@@ -6,7 +6,7 @@ import NavBar from "./components/NavBar";
 import Bodycontent from "./components/bodycontent";
 import Allcards from "./components/allcards"
 import Connectform from "./components/formconnexion"
-import CreateForm from "./views/formnewacount"
+import Inscription from "./components/formInscription"
 import Profile from "./components/profile"
 
 export default function App() {
@@ -21,7 +21,7 @@ export default function App() {
             <Route path="/accueil" element={<Bodycontent />} />
             <Route path="/" element={<Bodycontent />} />
             <Route path="/connexion" element={<Connectform />} />
-            <Route path="/CreateForm" element={<CreateForm />} />
+            <Route path="/CreateForm" element={<Inscription />} />
           </Routes>
         </BrowserRouter>
       </div>
