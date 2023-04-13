@@ -5,6 +5,12 @@ const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showLoginForm, setShowLoginForm] = useState(true);
+  const [name, setName] = useState('');
+  const [surname, setSurname] = useState('');
+  const [username, setUsername] = useState('');
+  const [description, setDescription] = useState('');
+  const [age, setAge] = useState('');
+  const [role, setRole] = useState('');
 
   const handleSubmit = () => {
     console.log(`Email: ${email}, Password: ${password}`);
@@ -59,13 +65,71 @@ const LoginForm = () => {
         <>
           <Text style={styles.title}>Register :</Text>
           <View style={styles.inputContainer}>
-            <TextInput
-              style={styles.input}
-              placeholder="Adresse email"
-              placeholderTextColor="#444444"
-              onChangeText={text => setEmail(text)}
-              value={email}
-            />
+          <TextInput
+          style={styles.input}
+          placeholder="Adresse email"
+          placeholderTextColor="#444444"
+          onChangeText={text => setEmail(text)}
+          value={email}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Prénom"
+          placeholderTextColor="#444444"
+          onChangeText={text => setName(text)}
+          value={name}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Nom"
+          placeholderTextColor="#444444"
+          onChangeText={text => setSurname(text)}
+          value={surname}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Pseudo"
+          placeholderTextColor="#444444"
+          onChangeText={text => setUsername(text)}
+          value={username}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Description"
+          placeholderTextColor="#444444"
+          onChangeText={text => setDescription(text)}
+          value={description}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Mot de passe"
+          placeholderTextColor="#444444"
+          onChangeText={text => setPassword(text)}
+          value={password}
+          secureTextEntry={true}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Âge"
+          placeholderTextColor="#444444"
+          onChangeText={text => setAge(text)}
+          value={age}
+        />
+        <View style={styles.selectContainer}>
+          <Text style={styles.selectLabel}>Rôle :</Text>
+          <TouchableOpacity
+            style={role === 'Student' ? styles.selectButtonSelected : styles.selectButton}
+            onPress={() => setRole('Student')}
+          >
+            <Text style={styles.selectButtonText}>Student</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={role === 'Professor' ? styles.selectButtonSelected : styles.selectButton}
+            onPress={() => setRole('Professor')}
+          >
+            <Text style={styles.selectButtonText}>Professor</Text>
+          </TouchableOpacity>
+        </View>
           </View>
           <View style={styles.buttonContainer}>
             <TouchableOpacity
@@ -141,6 +205,42 @@ const styles = StyleSheet.create({
   },
   registerButtonText: {
     color: '#FFFFFF',
+  },
+  selectContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 10,
+  },
+  selectLabel: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginRight: 10,
+  },
+  selectButton: {
+    backgroundColor: '#FFF',
+    borderRadius: 10,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    borderWidth: 1,
+    borderColor: '#000',
+    marginRight: 10,
+  },
+  selectButtonSelected: {
+    backgroundColor: '#F0FFF0',
+    borderRadius: 10,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    marginRight: 10,
+  },
+  selectButtonText: {
+    color: '#000',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  selectButtonTextSelected: {
+    color: '#FFF',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
 
