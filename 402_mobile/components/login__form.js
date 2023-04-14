@@ -8,7 +8,7 @@ const LoginForm = () => {
 
         let myHeaders = new Headers();
         myHeaders.append("Content-type", "application/json");
-
+        console.log(data.toJSON());
         const fetchOptions = {
             method: "POST",
             headers: myHeaders,
@@ -24,6 +24,35 @@ const LoginForm = () => {
                 .catch((error) => {
                     console.log(error);
                 });
+    }
+
+    const [utilisator, setUtilisator] = useState([]);
+
+    let handlerconnect = (data) => {
+        const url = "https://lyra.alwaysdata.net/public/api/CONNEXION";
+
+        let myHeaders = new Headers();
+        myHeaders.append("Content-type", "application/json");
+        console.log(data.toJSON());
+        const fetchOptions = {
+            method: "POST",
+            headers: myHeaders,
+            body: JSON.stringify(data.toJSON())
+        };
+            fetch(url, fetchOptions)
+                .then((response) => {
+                    return response.json();
+                })
+                .then((dataJSON) => {
+                    console.log(dataJSON);
+                    setUtilisator(dataJSON)
+                    console.log(utilisator)
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+
+        return utilisator
     }
 
     const date = new Date();
@@ -43,9 +72,11 @@ const LoginForm = () => {
 
 
     const handleSubmitConnect = () => {
-        console.log(`Email: ${email}, Password: ${password}`);
+        console.log(`Email: ${username}, Password: ${password}`);
+        let data = new User(username, password);
+        handlerconnect(data)
     };
-
+ 
     const handleSubmitRegister = () => {
         console.log(`Email: ${email}, name: ${name}, surname: ${surname}, username: ${username}, description: ${description}, age: ${age}, Password: ${password}`);
         let data = new User(username, password, name, surname, email, age, date_ajout, description, level, admin, role);
@@ -69,10 +100,10 @@ const LoginForm = () => {
                     <View style={styles.inputContainer}>
                         <TextInput
                             style={styles.input}
-                            placeholder="Adresse email"
+                            placeholder="Pseudo"
                             placeholderTextColor="#444444"
-                            onChangeText={text => setEmail(text)}
-                            value={email}
+                            onChangeText={text => setUsername(text)}
+                            value={username}
                         />
                         <TextInput
                             style={styles.input}
@@ -155,14 +186,14 @@ const LoginForm = () => {
                         <View style={styles.selectContainer}>
                             <Text style={styles.selectLabel}>Rôle :</Text>
                             <TouchableOpacity
-                                style={role === 'Student' ? styles.selectButtonSelected : styles.selectButton}
-                                onPress={() => setRole('Student')}
+                                style={role === 0 ? styles.selectButtonSelected : styles.selectButton}
+                                onPress={() => setRole(0)}
                             >
                                 <Text style={styles.selectButtonText}>Student</Text>
                             </TouchableOpacity>
                             <TouchableOpacity
-                                style={role === 'Professor' ? styles.selectButtonSelected : styles.selectButton}
-                                onPress={() => setRole('Professor')}
+                                style={role === 1 ? styles.selectButtonSelected : styles.selectButton}
+                                onPress={() => setRole(1)}
                             >
                                 <Text style={styles.selectButtonText}>Professor</Text>
                             </TouchableOpacity>
